@@ -1,0 +1,22 @@
+# Telegram bot framework. Extras:
+#   job-queue = background polling for new mail
+#   socks     = SOCKS5 proxy support for reaching api.telegram.org where it's blocked
+#               (only needed if TELEGRAM_PROXY=socks5://...; harmless otherwise)
+python-telegram-bot[job-queue,socks]>=22.0,<23
+
+# Gmail API + OAuth
+google-api-python-client>=2.140
+google-auth>=2.34
+google-auth-oauthlib>=1.2
+requests>=2.32
+
+# Local OAuth callback web server
+aiohttp>=3.10
+
+# Storage + secrets
+aiosqlite>=0.20          # local dev (SQLite, default)
+asyncpg>=0.29            # production (PostgreSQL, used when DATABASE_URL is set)
+cryptography>=43.0
+
+# Env loading
+python-dotenv>=1.0

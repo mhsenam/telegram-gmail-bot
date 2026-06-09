@@ -1,0 +1,16 @@
+# Secrets — NEVER commit these
+.env
+.env.*
+!.env.example
+
+# Database (contains users' encrypted Gmail tokens)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc

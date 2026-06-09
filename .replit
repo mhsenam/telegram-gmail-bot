@@ -1,0 +1,24 @@
+# Replit configuration for Gmail Super Bot.
+# Pin Python 3.11+ (avoids the 3.10 EOL warning and is faster).
+modules = ["python-3.11"]
+
+# Command used when you click "Run" in the workspace.
+run = "python main.py"
+entrypoint = "main.py"
+
+# Install deps automatically.
+[nix]
+channel = "stable-24_11"
+
+# --- Deployment ---------------------------------------------------------------
+# IMPORTANT: in the Deployments pane choose **Reserved VM** (NOT Autoscale).
+# This bot must run continuously (long polling + the 30s mail poller). Autoscale
+# scales to zero when idle and would stop notifications. The Deploy UI sets the
+# target; this run command is what it executes.
+[deployment]
+run = ["python", "main.py"]
+
+# The OAuth callback web server listens on 8080; expose it publicly on 80/443.
+[[ports]]
+localPort = 8080
+externalPort = 80
